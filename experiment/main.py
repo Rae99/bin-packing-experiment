@@ -1,11 +1,11 @@
-from input_generators import (
+from experiment.input_generators import (
     random_uniform,
     random_many_small,
     random_many_large,
     random_bimodal,
     random_perfect_packing,
 )
-from experiment import run_experiment
+from experiment.experiment import run_experiment
 
 
 if __name__ == "__main__":

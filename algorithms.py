@@ -5,76 +5,76 @@ from ortools.linear_solver import pywraplp
 
 def next_fit(items, L):
     """
-    Next-Fit (NF) for 1D strip packing.
+    Next-Fit (NF) for 1D bin packing.
     items are used in the given order (no sorting).
-    Each item is either put into the current strip or starts a new strip.
+    Each item is either put into the current bin or starts a new bin.
     """
-    strips_remaining_capacity = []
-    placement = []  # placement[i] is the list of items in the i-th strip
+    bins_remaining_capacity = []
+    placement = []  # placement[i] is the list of items in the i-th bin
 
     for x in items:
-        # if we don't have any strip yet, open the first one
-        if not strips_remaining_capacity:
-            strips_remaining_capacity.append(L - x)
+        # if we don't have any bin yet, open the first one
+        if not bins_remaining_capacity:
+            bins_remaining_capacity.append(L - x)
             placement.append([x])
         else:
-            # try to put x into the last strip
-            if strips_remaining_capacity[-1] >= x:
-                strips_remaining_capacity[-1] -= x
+            # try to put x into the last bin
+            if bins_remaining_capacity[-1] >= x:
+                bins_remaining_capacity[-1] -= x
                 placement[-1].append(x)
             else:
-                # cannot fit into current strip, then open a new one
-                strips_remaining_capacity.append(L - x)
+                # cannot fit into current bin, then open a new one
+                bins_remaining_capacity.append(L - x)
                 placement.append([x])
 
-    return len(strips_remaining_capacity), placement
+    return len(bins_remaining_capacity), placement
 
 
 def first_fit(items, L):
     """
-    First-Fit (FF) for 1D strip packing.
+    First-Fit (FF) for 1D bin packing.
     items are used in the given order (no sorting).
-    For each item, scan strips from the first one and put it
-    into the first strip that has enough remaining capacity.
+    For each item, scan bins from the first one and put it
+    into the first bin that has enough remaining capacity.
     """
-    strips_remaining_capacity = []
+    bins_remaining_capacity = []
     placement = []
 
     for x in items:
         chosen_index = None
 
-        # scan strips from left to right, stop at the first one that fits
-        for j, remaining in enumerate(strips_remaining_capacity):
+        # scan bins from left to right, stop at the first one that fits
+        for j, remaining in enumerate(bins_remaining_capacity):
             if remaining >= x:
                 chosen_index = j
                 break
 
         if chosen_index is None:
-            # open a new strip
-            strips_remaining_capacity.append(L - x)
+            # open a new bin
+            bins_remaining_capacity.append(L - x)
             placement.append([x])
         else:
-            strips_remaining_capacity[chosen_index] -= x
+            bins_remaining_capacity[chosen_index] -= x
             placement[chosen_index].append(x)
 
-    return len(strips_remaining_capacity), placement
+    return len(bins_remaining_capacity), placement
 
 
 def best_fit(items, L):
     """
-    Best-Fit (BF) for 1D strip packing.
+    Best-Fit (BF) for 1D bin packing.
     items are used in the given order (no sorting).
-    For each item, scan all strips and choose the one that would have
+    For each item, scan all bins and choose the one that would have
     the least remaining capacity after placing this item.
     """
-    strips_remaining_capacity = []
+    bins_remaining_capacity = []
     placement = []
 
     for x in items:
         chosen_index = None
         best_remaining_after = None  # minimal remaining capacity after placing x
 
-        for j, remaining in enumerate(strips_remaining_capacity):
+        for j, remaining in enumerate(bins_remaining_capacity):
             if remaining >= x:
                 after = remaining - x
                 if best_remaining_after is None or after < best_remaining_after:
@@ -82,14 +82,14 @@ def best_fit(items, L):
                     chosen_index = j
 
         if chosen_index is None:
-            # open a new strip
-            strips_remaining_capacity.append(L - x)
+            # open a new bin
+            bins_remaining_capacity.append(L - x)
             placement.append([x])
         else:
-            strips_remaining_capacity[chosen_index] -= x
+            bins_remaining_capacity[chosen_index] -= x
             placement[chosen_index].append(x)
 
-    return len(strips_remaining_capacity), placement
+    return len(bins_remaining_capacity), placement
 
 
 def first_fit_decreasing(items, L):
@@ -112,9 +112,9 @@ def best_fit_decreasing(items, L):
     return best_fit(items, L)
 
 
-def exact_strip_packing(items, L):
+def exact_bin_packing(items, L):
     """
-    Exact solution for 1-D Strip Packing using backtracking.
+    Exact solution for 1-D bin Packing using backtracking.
     """
 
     n = len(items)
@@ -152,61 +152,61 @@ def exact_strip_packing(items, L):
     # sorted_indices = [2, 0, 1]
     # sorted_items = [9, 7, 3]
 
-    # Lower and upper bounds on number of strips
+    # Lower and upper bounds on number of bins
     total = sum(sorted_items)
-    lb = math.ceil(total / L)  # minimum possible strips, but may not be feasible
-    ub = n  # maximum, each item takes its own strip
+    lb = math.ceil(total / L)  # minimum possible bins, but may not be feasible
+    ub = n  # maximum, each item takes its own bin
 
     best_k = None
     best_assignment = None
 
-    # starting from the possible lower bound lb, try increasing k and then call search_assignments to find whether a feasible packing which uses k strips exists
+    # starting from the possible lower bound lb, try increasing k and then call search_assignments to find whether a feasible packing which uses k bins exists
     for k in range(lb, ub + 1):
 
-        # Initialize remaining capacity for each strip
-        strips_remaining = []
+        # Initialize remaining capacity for each bin
+        bins_remaining = []
         for _ in range(k):
-            strips_remaining.append(L)
+            bins_remaining.append(L)
 
-        # initialize assignment array, assignment[i] = strip index for each item i, sorted by size descending
+        # initialize assignment array, assignment[i] = bin index for each item i, sorted by size descending
         # -1 means at the beginning all items are unassigned
         assignment = []
         for _ in range(n):
             assignment.append(-1)
 
-        # Try to pack all items into k strips
-        if search_assignments(0, sorted_items, strips_remaining, assignment):
+        # Try to pack all items into k bins
+        if search_assignments(0, sorted_items, bins_remaining, assignment):
             best_k = k
             best_assignment = assignment[:]  # make a copy
             break
 
     # Convert assignment back to original item indices
-    strips = []
+    bins = []
     for _ in range(best_k):
-        strips.append([])
+        bins.append([])
 
     for sorted_pos in range(n):
-        strip_id = best_assignment[sorted_pos]
+        bin_id = best_assignment[sorted_pos]
         orig_idx = sorted_indices[sorted_pos]
-        strips[strip_id].append(orig_idx)
+        bins[bin_id].append(orig_idx)
     # example:
     # sorted_indices = [2, 0, 1]
     # sorted_items = [9, 7, 3]
-    # best_assignment[0] means sorted_items[0] = 9 (original index 2) is placed into strip with strip_idx = best_assignment[0]
+    # best_assignment[0] means sorted_items[0] = 9 (original index 2) is placed into bin with bin_idx = best_assignment[0]
 
-    return best_k, strips
+    return best_k, bins
 
 
-def search_assignments(i, items, strips_remaining, assignment):
+def search_assignments(i, items, bins_remaining, assignment):
     """
-    Backtracking: try to place item i into one of the strips.
+    Backtracking: try to place item i into one of the bins.
 
     i: index of current item in 'items'
     items: a list, sizes sorted in descending order
-    strips_remaining: a list, remaining capacity in each strip
-    assignment: a list, assignment[i] = strip id for item i
+    bins_remaining: a list, remaining capacity in each bin
+    assignment: a list, assignment[i] = bin id for item i
 
-    what we are doing: given i, try to assign items[i..end] into strips——strips_remaining shows the number of strips and the remaining capacity of each strip
+    what we are doing: given i, try to assign items[i..end] into bins——bins_remaining shows the number of bins and the remaining capacity of each bin
     return True if a complete feasible assignment is found.
     """
 
@@ -218,14 +218,14 @@ def search_assignments(i, items, strips_remaining, assignment):
 
     size_i = items[i]
 
-    # avoid trying strips with the same remaining capacity
+    # avoid trying bins with the same remaining capacity
     used_capacities = []
 
-    for b in range(len(strips_remaining)):
+    for b in range(len(bins_remaining)):
 
-        cap = strips_remaining[b]
+        cap = bins_remaining[b]
 
-        # Skip if we already tried a strip with the same capacity
+        # Skip if we already tried a bin with the same capacity
         skip = False
         for c in used_capacities:
             if cap == c:
@@ -235,38 +235,33 @@ def search_assignments(i, items, strips_remaining, assignment):
             continue
         used_capacities.append(cap)
 
-        # If item fits into strip b, place it there
+        # If item fits into bin b, place it there
         if cap >= size_i:
 
-            strips_remaining[b] -= size_i
+            bins_remaining[b] -= size_i
             assignment[i] = b
 
             # Continue with next item
-            if search_assignments(i + 1, items, strips_remaining, assignment):
+            if search_assignments(i + 1, items, bins_remaining, assignment):
                 return True
 
             # Backtrack
             assignment[i] = -1
-            strips_remaining[b] += size_i
+            bins_remaining[b] += size_i
 
-    # No strip worked
+    # No bin worked
     return False
+
 
 def mip_bin_packing(items, L):
     """
-    Exact 1-D bin packing using the MIP solver from Google OR-Tools (SCIP backend).
+    Exact 1-D bin packing using the MIP solver from Google OR-Tools.
+    MIP: Mixed Integer Programming model.
 
     This function is a lightly adapted version of the official OR-Tools
-    bin packing example. The main changes are:
-
-        * It takes `items` (list of item sizes) and capacity `L` as parameters.
-        * It returns (num_bins, placement) to match this project's interface:
-              - num_bins: number of bins used in the optimal solution
-              - placement: list of bins, each bin is a list of original item indices
-        * It does not print anything; the caller is responsible for timing/logging.
+    bin packing example. It's adjusted to fit the experiment.
 
     The MIP model:
-
         - Binary variable x[i, j] = 1 if item i is packed in bin j.
         - Binary variable y[j]    = 1 if bin j is used.
         - Each item must be in exactly one bin.
@@ -310,10 +305,7 @@ def mip_bin_packing(items, L):
 
     # The amount packed in each bin cannot exceed its capacity.
     for j in bin_indices:
-        solver.Add(
-            sum(x[(i, j)] * items[i] for i in item_indices)
-            <= y[j] * L
-        )
+        solver.Add(sum(x[(i, j)] * items[i] for i in item_indices) <= y[j] * L)
 
     # Objective: minimize the number of bins used.
     solver.Minimize(solver.Sum(y[j] for j in bin_indices))
@@ -338,4 +330,3 @@ def mip_bin_packing(items, L):
 
     num_bins = len(placement)
     return num_bins, placement
-

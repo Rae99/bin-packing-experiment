@@ -48,12 +48,12 @@ def random_bimodal(n: int, L: int):
     return arr
 
 
-def random_perfect_packing(num_strips: int, L: int):
+def random_perfect_packing(num_bins: int, L: int):
     """
-    Generate items that perfectly pack into num_strips strips of capacity L.
+    Generate items that perfectly pack into num_bins bins of capacity L.
     """
     sizes = []
-    for _ in range(num_strips):
+    for _ in range(num_bins):
         remaining = L
         while remaining > 0:
             # randint both sides inclusive

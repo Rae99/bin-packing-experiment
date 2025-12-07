@@ -1,3 +1,8 @@
+Based on this output, we find MIP is rather slow. So we should tune down the threshold of MIP.
+I will just run it on the input of size less than or equal to 12.
+
+Below is one output of the experiment, but before I adjusted the threshold for MIP.
+
 === Experiment: Uniform small n, n=8, L=10, trials=50 ===
 Algo       avg_bins   avg_time(ms)  avg_ratio
 NF              5.600          0.002      1.150
@@ -191,3 +196,6 @@ Estimated OPT (min over exact solvers) avg_bins = 5.960
 my_own_exact_solver vs MIP: all trials matched in #bins
 ^Cpressed CTRL-C 1 times (5 times for forcing termination)
 [MISMATCH] my_own_exact_solver=9, MIP=16, items=[1, 5, 6, 6, 1, 6, 8, 9, 9, 2, 3, 1, 5, 5, 6, 4]
+
+
+

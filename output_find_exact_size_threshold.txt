@@ -1,0 +1,23 @@
+n=10, L=10:  avg_time=0.014 ms,  worst_time=0.028 ms
+n=12, L=10:  avg_time=0.018 ms,  worst_time=0.029 ms
+n=14, L=10:  avg_time=0.021 ms,  worst_time=0.033 ms
+n=16, L=10:  avg_time=0.023 ms,  worst_time=0.035 ms
+n=18, L=10:  avg_time=0.038 ms,  worst_time=0.072 ms
+n=20, L=10:  avg_time=0.041 ms,  worst_time=0.101 ms
+n=22, L=10:  avg_time=0.042 ms,  worst_time=0.104 ms
+n=24, L=10:  avg_time=0.050 ms,  worst_time=0.192 ms
+n=26, L=10:  avg_time=0.096 ms,  worst_time=0.716 ms
+n=28, L=10:  avg_time=0.150 ms,  worst_time=1.487 ms
+n=30, L=10:  avg_time=0.321 ms,  worst_time=3.384 ms
+n=32, L=10:  avg_time=0.390 ms,  worst_time=5.731 ms
+n=34, L=10:  avg_time=0.128 ms,  worst_time=0.532 ms
+n=36, L=10:  avg_time=0.854 ms,  worst_time=12.232 ms
+n=38, L=10:  avg_time=24.086 ms,  worst_time=326.565 ms
+n=40, L=10:  avg_time=0.352 ms,  worst_time=4.414 ms
+n=42, L=10:  avg_time=4.364 ms,  worst_time=84.309 ms
+n=44, L=10:  avg_time=0.429 ms,  worst_time=4.025 ms
+n=46, L=10:  avg_time=6.114 ms,  worst_time=60.633 ms
+n=48, L=10:  avg_time=1.341 ms,  worst_time=22.142 ms
+n=50, L=10:  avg_time=3.163 ms,  worst_time=41.009 ms
+
+# based on this output, we can set exact_threshold = 30

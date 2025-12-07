@@ -9,8 +9,7 @@ from experiment import run_experiment
 
 
 if __name__ == "__main__":
-
-    small_ns = [8, 12, 16]
+    small_ns = [8, 12, 16, 20, 24, 28, 30]
     big_ns = [50, 100, 200]
     L_values = [10, 100]
 
@@ -31,9 +30,10 @@ if __name__ == "__main__":
     ]
 
     # Small n, L = 10
-    for n in small_ns:
-        for name, gen in small_generators:
-            run_experiment(name, gen, n=n, L=10, trials=50)
+    for L in L_values:
+        for n in small_ns:
+            for name, gen in small_generators:
+                run_experiment(name, gen, n=n, L=10, trials=50)
 
     # Big n, L = 10 and 100
     for L in L_values:

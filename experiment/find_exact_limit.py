@@ -1,6 +1,6 @@
 import time
-from experiment.input_generators import random_uniform
-from experiment.algorithms import exact_bin_packing
+from input_generators import random_uniform
+from algorithms import exact_bin_packing
 
 
 def find_exact_limit(n_values, L=10, trials=10):

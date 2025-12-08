@@ -1,4 +1,4 @@
-from experiment.algorithms import (
+from algorithms import (
     next_fit,
     first_fit,
     best_fit,

@@ -2,7 +2,7 @@ import os
 import time
 import csv
 
-from experiment.algorithms import (
+from algorithms import (
     next_fit,
     first_fit,
     best_fit,
@@ -195,6 +195,8 @@ def run_experiment(
     for algo_name in heuristics_algos:
         avg_bins = stats_bins[algo_name] / trials
         avg_time_ms = stats_time[algo_name] * 1000.0 / trials
+
+        avg_ratio = None
 
         if n <= exact_threshold and opt_runs > 0:
             avg_ratio = stats_ratio[algo_name] / opt_runs

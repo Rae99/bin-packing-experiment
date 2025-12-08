@@ -1,8 +1,8 @@
 import csv
 
 INPUT_PATH = "experiment_direct_output/output_new.txt"
-ALGO_CSV = "parse_output_to_csv/algo_results.csv"
-SOLVER_CSV = "parse_output_to_csv/solver_results.csv"
+ALGO_CSV = "parse_output_to_csv/algo_results_manual.csv"
+SOLVER_CSV = "parse_output_to_csv/solver_results_manual.csv"
 
 
 def parse_experiments(path):

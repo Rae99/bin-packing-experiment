@@ -1,4 +1,7 @@
+import os
 import time
+import csv
+
 from experiment.algorithms import (
     next_fit,
     first_fit,
@@ -8,6 +11,61 @@ from experiment.algorithms import (
     exact_bin_packing,
     mip_bin_packing,
 )
+
+ALGO_RESULTS_CSV = "visualization/algo_results.csv"
+SOLVER_RESULTS_CSV = "visualization/solver_results.csv"
+
+
+def _append_algo_row(dist, n, L, trials, algo, avg_bins, avg_time_ms, avg_ratio):
+    file_exists = os.path.exists(ALGO_RESULTS_CSV)
+    with open(ALGO_RESULTS_CSV, "a", newline="") as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(
+                [
+                    "dist",
+                    "n",
+                    "L",
+                    "trials",
+                    "algo",
+                    "avg_bins",
+                    "avg_time_ms",
+                    "avg_ratio",
+                ]
+            )
+        writer.writerow(
+            [
+                dist,
+                n,
+                L,
+                trials,
+                algo,
+                avg_bins,
+                avg_time_ms,
+                "" if avg_ratio is None else avg_ratio,
+            ]
+        )
+
+
+def _append_solver_row(dist, n, L, trials, solver, avg_bins, avg_time_ms):
+    file_exists = os.path.exists(SOLVER_RESULTS_CSV)
+    with open(SOLVER_RESULTS_CSV, "a", newline="") as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(
+                ["dist", "n", "L", "trials", "solver", "avg_bins", "avg_time_ms"]
+            )
+        writer.writerow(
+            [
+                dist,
+                n,
+                L,
+                trials,
+                solver,
+                avg_bins,
+                avg_time_ms,
+            ]
+        )
 
 
 def run_experiment(
@@ -145,6 +203,9 @@ def run_experiment(
             ratio_str = "-"
 
         print(f"{algo_name:<10} {avg_bins:10.8f} {avg_time_ms:14.3f} {ratio_str:>10}")
+        _append_algo_row(
+            name, n, L, trials, algo_name, avg_bins, avg_time_ms, avg_ratio
+        )
 
     # Exact solvers summary
     if n <= exact_threshold and opt_runs > 0:
@@ -155,6 +216,9 @@ def run_experiment(
             avg_exact_bins = exact_stats_bins[solver_name] / trials
             avg_exact_time_ms = exact_stats_time[solver_name] * 1000.0 / trials
             print(f"{solver_name:<20} {avg_exact_bins:10.8f} {avg_exact_time_ms:14.3f}")
+            _append_solver_row(
+                name, n, L, trials, solver_name, avg_exact_bins, avg_exact_time_ms
+            )
 
         avg_opt = opt_total_bins / opt_runs
         print(f"\nEstimated OPT (min over exact solvers) avg_bins = {avg_opt:.8f}")

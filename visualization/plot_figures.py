@@ -5,33 +5,40 @@ import matplotlib.pyplot as plt
 # =========================
 # Load CSV
 # =========================
-algo_df = pd.read_csv("parse_output_to_csv/algo_results.csv")
-solver_df = pd.read_csv("parse_output_to_csv/solver_results.csv")
+algo_df = pd.read_csv("visualization/algo_results.csv")
+solver_df = pd.read_csv("visualization/solver_results.csv")
 
 # Standardize column names for convenience
-algo_df.rename(columns={
-    "dist": "dist",
-    "avg_bins": "algo_bins",
-    "avg_time_ms": "algo_time",
-}, inplace=True)
+algo_df.rename(
+    columns={
+        "dist": "dist",
+        "avg_bins": "algo_bins",
+        "avg_time_ms": "algo_time",
+    },
+    inplace=True,
+)
 
-solver_df.rename(columns={
-    "dist": "dist",
-    "avg_bins": "opt_bins",
-    "avg_time_ms": "solver_time",
-}, inplace=True)
+solver_df.rename(
+    columns={
+        "dist": "dist",
+        "avg_bins": "opt_bins",
+        "avg_time_ms": "solver_time",
+    },
+    inplace=True,
+)
 
 # Merge heuristic & solver results
 merged = algo_df.merge(
-    solver_df[["dist","n","L","opt_bins","solver_time"]],
-    on=["dist","n","L"],
-    how="left"
+    solver_df[["dist", "n", "L", "opt_bins", "solver_time"]],
+    on=["dist", "n", "L"],
+    how="left",
 )
 
 # Create output dirs
 os.makedirs("visualization/figs/group1_ratio", exist_ok=True)
 os.makedirs("visualization/figs/group2_runtime", exist_ok=True)
 os.makedirs("visualization/figs/group3_summary", exist_ok=True)
+
 
 # =========================
 # Graph Group 1: Ratio vs n
@@ -46,7 +53,7 @@ def plot_ratio_vs_n():
             if df.empty:
                 continue
 
-            plt.figure(figsize=(8,5))
+            plt.figure(figsize=(8, 5))
 
             for algo in heuristics:
                 sub = df[df["algo"] == algo]
@@ -55,7 +62,7 @@ def plot_ratio_vs_n():
 
             # OPT line (ratio = 1 always)
             ns = sorted(df["n"].unique())
-            plt.plot(ns, [1]*len(ns), "k--", label="OPT")
+            plt.plot(ns, [1] * len(ns), "k--", label="OPT")
 
             plt.title(f"Ratio vs n — {dist}, L={L}")
             plt.xlabel("n")
@@ -83,18 +90,25 @@ def plot_runtime_vs_n():
             if df.empty:
                 continue
 
-            plt.figure(figsize=(8,5))
+            plt.figure(figsize=(8, 5))
 
             # Heuristic runtime
             for algo in heuristics:
                 sub = df[df["algo"] == algo]
                 if not sub.empty:
-                    plt.plot(sub["n"], sub["algo_time"], marker="o", label=f"{algo} time")
+                    plt.plot(
+                        sub["n"], sub["algo_time"], marker="o", label=f"{algo} time"
+                    )
 
             # Solver time
             solver_sub = df.drop_duplicates(subset=["n"])
-            plt.plot(solver_sub["n"], solver_sub["solver_time"],
-                     marker="s", label="Solver(opt) time", linestyle="--")
+            plt.plot(
+                solver_sub["n"],
+                solver_sub["solver_time"],
+                marker="s",
+                label="Solver(opt) time",
+                linestyle="--",
+            )
 
             plt.yscale("log")
             plt.title(f"Runtime vs n (log scale) — {dist}, L={L}")
@@ -120,11 +134,11 @@ def plot_global_avg_ratio():
         sub = merged[merged["algo"] == algo]
         avg_ratios.append(sub["avg_ratio"].mean())
 
-    plt.figure(figsize=(8,5))
+    plt.figure(figsize=(8, 5))
     plt.bar(heuristics, avg_ratios)
     plt.title("Overall Average Ratio Across All Input Types")
     plt.ylabel("Average Ratio")
-    plt.grid(axis='y', alpha=0.3)
+    plt.grid(axis="y", alpha=0.3)
 
     filename = "visualization/figs/group3_summary/overall_avg_ratio.png"
     plt.savefig(filename, dpi=200)

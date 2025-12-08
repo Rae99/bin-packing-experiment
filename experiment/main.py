@@ -30,11 +30,10 @@ if __name__ == "__main__":
     ]
 
     # Small n, L = 10
-    for L in L_values:
-        for n in small_ns:
-            for name, gen in small_generators:
-                run_experiment(name, gen, n=n, L=10, trials=50)
-                # avoid small n + large L, which is too easy because there is a high chance items won't fill up even one bin.
+    for n in small_ns:
+        for name, gen in small_generators:
+            run_experiment(name, gen, n=n, L=10, trials=50)
+            # avoid small n + large L, which is too easy because there is a high chance items won't fill up even one bin.
 
     # Big n, L = 10 and 100
     for L in L_values:

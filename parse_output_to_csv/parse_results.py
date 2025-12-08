@@ -1,6 +1,6 @@
 import csv
 
-INPUT_PATH = "experiment_direct_output/output_new.txt"
+INPUT_PATH = "experiment_direct_output/output3.txt"
 ALGO_CSV = "parse_output_to_csv/algo_results_manual.csv"
 SOLVER_CSV = "parse_output_to_csv/solver_results_manual.csv"
 

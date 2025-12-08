@@ -8,6 +8,10 @@ import matplotlib.pyplot as plt
 algo_df = pd.read_csv("visualization/algo_results.csv")
 solver_df = pd.read_csv("visualization/solver_results.csv")
 
+# Using manually parsed CSVs to fix any inconsistencies
+# algo_df = pd.read_csv("parse_output_to_csv/algo_results_manual.csv")
+# solver_df = pd.read_csv("parse_output_to_csv/solver_results_manual.csv")
+
 # Standardize column names for convenience
 algo_df.rename(
     columns={

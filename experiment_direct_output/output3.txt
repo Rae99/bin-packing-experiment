@@ -1,0 +1,750 @@
+
+=== Experiment: Uniform small n, n=8, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         5.98000000          0.002 1.12538095
+FF         5.48000000          0.003 1.02200000
+BF         5.40000000          0.003 1.00666667
+FFD        5.38000000          0.004 1.00000000
+BFD        5.38000000          0.003 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  5.38000000          0.016
+MIP                  5.38000000         11.924
+
+Estimated OPT (min over exact solvers) avg_bins = 5.38000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Many small items, n=8, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         3.66000000          0.002 1.12066667
+FF         3.32000000          0.003 1.02000000
+BF         3.32000000          0.003 1.02000000
+FFD        3.24000000          0.003 1.00000000
+BFD        3.24000000          0.003 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  3.24000000          0.012
+MIP                  3.24000000          4.360
+
+Estimated OPT (min over exact solvers) avg_bins = 3.24000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Many large items, n=8, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         6.08000000          0.002 1.10104762
+FF         5.66000000          0.003 1.01866667
+BF         5.62000000          0.003 1.01066667
+FFD        5.56000000          0.004 1.00000000
+BFD        5.56000000          0.003 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  5.56000000          0.016
+MIP                  5.56000000          6.398
+
+Estimated OPT (min over exact solvers) avg_bins = 5.56000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Bimodal, n=8, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         3.96000000          0.002 1.06633333
+FF         3.82000000          0.003 1.03500000
+BF         3.78000000          0.003 1.02500000
+FFD        3.70000000          0.003 1.00000000
+BFD        3.70000000          0.003 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  3.70000000          0.013
+MIP                  3.70000000          9.784
+
+Estimated OPT (min over exact solvers) avg_bins = 3.70000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Perfect packing, n=8, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         10.24000000          0.004 1.28000000
+FF         8.60000000          0.009 1.07500000
+BF         8.52000000          0.009 1.06500000
+FFD        8.00000000          0.010 1.00000000
+BFD        8.00000000          0.010 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  8.00000000          0.032
+MIP                  8.00000000         22.693
+
+Estimated OPT (min over exact solvers) avg_bins = 8.00000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Uniform small n, n=12, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         8.46000000          0.003 1.13264286
+FF         7.72000000          0.005 1.03349206
+BF         7.64000000          0.005 1.02222222
+FFD        7.50000000          0.006 1.00000000
+BFD        7.50000000          0.005 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  7.50000000          0.027
+MIP                  7.50000000        429.143
+
+Estimated OPT (min over exact solvers) avg_bins = 7.50000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Many small items, n=12, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         5.40000000          0.003 1.13119048
+FF         4.86000000          0.005 1.02219048
+BF         4.84000000          0.004 1.01819048
+FFD        4.78000000          0.005 1.00800000
+BFD        4.78000000          0.005 1.00800000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  4.74000000          0.019
+MIP                  4.74000000         76.303
+
+Estimated OPT (min over exact solvers) avg_bins = 4.74000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Many large items, n=12, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         9.36000000          0.003 1.15598557
+FF         8.42000000          0.006 1.03578571
+BF         8.38000000          0.005 1.03106349
+FFD        8.16000000          0.006 1.00000000
+BFD        8.16000000          0.005 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  8.16000000          0.028
+MIP                  8.16000000       4496.116
+
+Estimated OPT (min over exact solvers) avg_bins = 8.16000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Bimodal, n=12, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         5.98000000          0.003 1.10157143
+FF         5.64000000          0.005 1.03800000
+BF         5.60000000          0.005 1.02966667
+FFD        5.46000000          0.006 1.00000000
+BFD        5.46000000          0.005 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  5.46000000          0.022
+MIP                  5.46000000       3420.604
+
+Estimated OPT (min over exact solvers) avg_bins = 5.46000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Perfect packing, n=12, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         15.08000000          0.007 1.25666667
+FF         12.64000000          0.014 1.05333333
+BF         12.54000000          0.015 1.04500000
+FFD        12.00000000          0.017 1.00000000
+BFD        12.00000000          0.017 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  12.00000000          0.055
+MIP                  12.00000000         53.259
+
+Estimated OPT (min over exact solvers) avg_bins = 12.00000000
+my_own_exact_solver vs MIP: all trials matched in #bins
+
+=== Experiment: Uniform small n, n=16, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         11.16000000          0.002 1.19350289
+FF         9.84000000          0.005 1.04981890
+BF         9.68000000          0.006 1.03088240
+FFD        9.40000000          0.006 1.00000000
+BFD        9.40000000          0.007 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  9.40000000          0.039
+
+Estimated OPT (min over exact solvers) avg_bins = 9.40000000
+
+=== Experiment: Many small items, n=16, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         7.20000000          0.002 1.17397619
+FF         6.26000000          0.004 1.02209524
+BF         6.22000000          0.005 1.01638095
+FFD        6.14000000          0.005 1.00333333
+BFD        6.14000000          0.005 1.00333333
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  6.12000000          0.020
+
+Estimated OPT (min over exact solvers) avg_bins = 6.12000000
+
+=== Experiment: Many large items, n=16, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         12.26000000          0.002 1.16585354
+FF         10.86000000          0.005 1.03167172
+BF         10.72000000          0.005 1.01781313
+FFD        10.54000000          0.005 1.00000000
+BFD        10.54000000          0.006 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  10.54000000          0.030
+
+Estimated OPT (min over exact solvers) avg_bins = 10.54000000
+
+=== Experiment: Bimodal, n=16, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         8.32000000          0.002 1.12921429
+FF         7.78000000          0.004 1.05307143
+BF         7.64000000          0.005 1.03371429
+FFD        7.44000000          0.005 1.00000000
+BFD        7.44000000          0.006 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  7.44000000          0.022
+
+Estimated OPT (min over exact solvers) avg_bins = 7.44000000
+
+=== Experiment: Perfect packing, n=16, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         19.78000000          0.005 1.23625000
+FF         16.76000000          0.015 1.04750000
+BF         16.66000000          0.018 1.04125000
+FFD        16.00000000          0.020 1.00000000
+BFD        16.00000000          0.023 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  16.00000000          0.062
+
+Estimated OPT (min over exact solvers) avg_bins = 16.00000000
+
+=== Experiment: Uniform small n, n=20, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         14.16000000          0.002 1.19700355
+FF         12.42000000          0.006 1.04745588
+BF         12.34000000          0.007 1.04004440
+FFD        11.88000000          0.007 1.00000000
+BFD        11.88000000          0.008 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  11.88000000          0.037
+
+Estimated OPT (min over exact solvers) avg_bins = 11.88000000
+
+=== Experiment: Many small items, n=20, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         8.84000000          0.002 1.15298773
+FF         7.78000000          0.006 1.01921429
+BF         7.72000000          0.006 1.01135714
+FFD        7.64000000          0.006 1.00000000
+BFD        7.64000000          0.007 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  7.64000000          0.129
+
+Estimated OPT (min over exact solvers) avg_bins = 7.64000000
+
+=== Experiment: Many large items, n=20, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         15.36000000          0.002 1.17096150
+FF         13.62000000          0.006 1.03573293
+BF         13.50000000          0.007 1.02598934
+FFD        13.18000000          0.007 1.00000000
+BFD        13.18000000          0.009 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  13.18000000          0.047
+
+Estimated OPT (min over exact solvers) avg_bins = 13.18000000
+
+=== Experiment: Bimodal, n=20, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         9.90000000          0.002 1.13151154
+FF         9.14000000          0.005 1.04371501
+BF         8.98000000          0.007 1.02650794
+FFD        8.78000000          0.006 1.00000000
+BFD        8.78000000          0.009 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  8.78000000          0.028
+
+Estimated OPT (min over exact solvers) avg_bins = 8.78000000
+
+=== Experiment: Perfect packing, n=20, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         24.60000000          0.006 1.23000000
+FF         20.58000000          0.022 1.02900000
+BF         20.44000000          0.025 1.02200000
+FFD        20.00000000          0.028 1.00000000
+BFD        20.00000000          0.032 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  20.00000000          0.086
+
+Estimated OPT (min over exact solvers) avg_bins = 20.00000000
+
+=== Experiment: Uniform small n, n=24, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         16.86000000          0.003 1.19622788
+FF         14.64000000          0.008 1.03647226
+BF         14.58000000          0.009 1.03172867
+FFD        14.14000000          0.009 1.00000000
+BFD        14.14000000          0.011 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  14.14000000          0.139
+
+Estimated OPT (min over exact solvers) avg_bins = 14.14000000
+
+=== Experiment: Many small items, n=24, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         10.64000000          0.003 1.18358225
+FF         9.16000000          0.007 1.02215152
+BF         9.10000000          0.008 1.01492929
+FFD        8.96000000          0.008 1.00000000
+BFD        8.96000000          0.009 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  8.96000000          0.025
+
+Estimated OPT (min over exact solvers) avg_bins = 8.96000000
+
+=== Experiment: Many large items, n=24, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         18.76000000          0.003 1.16747962
+FF         16.62000000          0.008 1.03284233
+BF         16.50000000          0.009 1.02455661
+FFD        16.12000000          0.009 1.00000000
+BFD        16.12000000          0.011 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  16.12000000          0.092
+
+Estimated OPT (min over exact solvers) avg_bins = 16.12000000
+
+=== Experiment: Bimodal, n=24, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         12.42000000          0.003 1.17739999
+FF         11.24000000          0.007 1.06360240
+BF         11.16000000          0.009 1.05561755
+FFD        10.62000000          0.008 1.00000000
+BFD        10.62000000          0.011 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  10.62000000          0.041
+
+Estimated OPT (min over exact solvers) avg_bins = 10.62000000
+
+=== Experiment: Perfect packing, n=24, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         29.90000000          0.007 1.24583333
+FF         24.66000000          0.028 1.02750000
+BF         24.54000000          0.033 1.02250000
+FFD        24.00000000          0.037 1.00000000
+BFD        24.00000000          0.042 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  24.00000000          0.114
+
+Estimated OPT (min over exact solvers) avg_bins = 24.00000000
+
+=== Experiment: Uniform small n, n=28, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         19.98000000          0.003 1.21003913
+FF         17.08000000          0.010 1.03253109
+BF         17.00000000          0.012 1.02813825
+FFD        16.56000000          0.011 1.00000000
+BFD        16.56000000          0.014 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  16.56000000          0.189
+
+Estimated OPT (min over exact solvers) avg_bins = 16.56000000
+
+=== Experiment: Many small items, n=28, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         12.34000000          0.003 1.19271972
+FF         10.50000000          0.009 1.01717483
+BF         10.48000000          0.010 1.01495260
+FFD        10.32000000          0.010 1.00000000
+BFD        10.32000000          0.012 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  10.32000000          0.032
+
+Estimated OPT (min over exact solvers) avg_bins = 10.32000000
+
+=== Experiment: Many large items, n=28, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         21.92000000          0.003 1.16225179
+FF         19.56000000          0.010 1.03473918
+BF         19.40000000          0.012 1.02597594
+FFD        18.94000000          0.012 1.00000000
+BFD        18.94000000          0.014 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  18.94000000          0.145
+
+Estimated OPT (min over exact solvers) avg_bins = 18.94000000
+
+=== Experiment: Bimodal, n=28, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         14.20000000          0.003 1.17759810
+FF         12.68000000          0.008 1.04835276
+BF         12.58000000          0.011 1.03889821
+FFD        12.16000000          0.009 1.00000000
+BFD        12.16000000          0.014 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  12.16000000          0.051
+
+Estimated OPT (min over exact solvers) avg_bins = 12.16000000
+
+=== Experiment: Perfect packing, n=28, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         34.82000000          0.008 1.24357143
+FF         28.62000000          0.036 1.02214286
+BF         28.50000000          0.041 1.01785714
+FFD        28.00000000          0.048 1.00000000
+BFD        28.00000000          0.055 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  28.00000000          0.147
+
+Estimated OPT (min over exact solvers) avg_bins = 28.00000000
+
+=== Experiment: Uniform small n, n=30, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         21.26000000          0.003 1.20292668
+FF         18.44000000          0.011 1.04140088
+BF         18.18000000          0.013 1.02725033
+FFD        17.72000000          0.012 1.00000000
+BFD        17.72000000          0.015 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  17.72000000          0.085
+
+Estimated OPT (min over exact solvers) avg_bins = 17.72000000
+
+=== Experiment: Many small items, n=30, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         13.24000000          0.003 1.19331979
+FF         11.32000000          0.009 1.02034699
+BF         11.30000000          0.010 1.01858508
+FFD        11.08000000          0.011 1.00000000
+BFD        11.08000000          0.012 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  11.08000000          0.033
+
+Estimated OPT (min over exact solvers) avg_bins = 11.08000000
+
+=== Experiment: Many large items, n=30, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         23.24000000          0.003 1.17710150
+FF         20.38000000          0.011 1.02946152
+BF         20.18000000          0.013 1.01910921
+FFD        19.82000000          0.013 1.00000000
+BFD        19.82000000          0.016 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  19.82000000          0.119
+
+Estimated OPT (min over exact solvers) avg_bins = 19.82000000
+
+=== Experiment: Bimodal, n=30, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         15.20000000          0.003 1.15258538
+FF         13.78000000          0.009 1.04020052
+BF         13.64000000          0.012 1.02970946
+FFD        13.28000000          0.010 1.00000000
+BFD        13.28000000          0.016 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  13.28000000          0.063
+
+Estimated OPT (min over exact solvers) avg_bins = 13.28000000
+
+=== Experiment: Perfect packing, n=30, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         37.02000000          0.009 1.23400000
+FF         30.66000000          0.042 1.02200000
+BF         30.58000000          0.048 1.01933333
+FFD        30.00000000          0.056 1.00000000
+BFD        30.00000000          0.064 1.00000000
+
+Exact solvers:
+Solver                 avg_bins   avg_time(ms)
+my_own_exact_solver  30.00000000          0.168
+
+Estimated OPT (min over exact solvers) avg_bins = 30.00000000
+
+=== Experiment: Uniform big n, n=50, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         35.34000000          0.005          -
+FF         29.92000000          0.023          -
+BF         29.58000000          0.029          -
+FFD        28.66000000          0.026          -
+BFD        28.66000000          0.035          -
+
+=== Experiment: Many small items, n=50, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         21.46000000          0.005          -
+FF         17.96000000          0.017          -
+BF         17.90000000          0.021          -
+FFD        17.88000000          0.023          -
+BFD        17.88000000          0.026          -
+
+=== Experiment: Many large items, n=50, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         38.50000000          0.005          -
+FF         33.48000000          0.024          -
+BF         33.22000000          0.030          -
+FFD        32.58000000          0.027          -
+BFD        32.58000000          0.035          -
+
+=== Experiment: Bimodal, n=50, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         24.76000000          0.005          -
+FF         21.68000000          0.018          -
+BF         21.52000000          0.024          -
+FFD        20.96000000          0.019          -
+BFD        20.96000000          0.033          -
+
+=== Experiment: Perfect packing, n=50, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         61.28000000          0.015          -
+FF         50.68000000          0.097          -
+BF         50.52000000          0.108          -
+FFD        50.00000000          0.129          -
+BFD        50.00000000          0.150          -
+
+=== Experiment: Uniform big n, n=100, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         70.34000000          0.010          -
+FF         58.48000000          0.075          -
+BF         58.06000000          0.092          -
+FFD        56.44000000          0.085          -
+BFD        56.44000000          0.112          -
+
+=== Experiment: Many small items, n=100, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         42.34000000          0.010          -
+FF         35.32000000          0.052          -
+BF         35.22000000          0.058          -
+FFD        35.12000000          0.067          -
+BFD        35.12000000          0.079          -
+
+=== Experiment: Many large items, n=100, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         76.42000000          0.010          -
+FF         65.38000000          0.083          -
+BF         65.00000000          0.103          -
+FFD        64.14000000          0.093          -
+BFD        64.14000000          0.125          -
+
+=== Experiment: Bimodal, n=100, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         49.86000000          0.011          -
+FF         42.98000000          0.054          -
+BF         42.70000000          0.081          -
+FFD        42.26000000          0.059          -
+BFD        42.26000000          0.119          -
+
+=== Experiment: Perfect packing, n=100, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         122.34000000          0.030          -
+FF         100.68000000          0.354          -
+BF         100.56000000          0.372          -
+FFD        100.00000000          0.475          -
+BFD        100.00000000          0.546          -
+
+=== Experiment: Uniform big n, n=200, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         141.14000000          0.021          -
+FF         116.10000000          0.266          -
+BF         115.20000000          0.321          -
+FFD        112.76000000          0.302          -
+BFD        112.76000000          0.417          -
+
+=== Experiment: Many small items, n=200, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         85.14000000          0.021          -
+FF         69.82000000          0.178          -
+BF         69.78000000          0.192          -
+FFD        69.68000000          0.233          -
+BFD        69.68000000          0.283          -
+
+=== Experiment: Many large items, n=200, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         152.50000000          0.021          -
+FF         129.44000000          0.297          -
+BF         128.86000000          0.367          -
+FFD        127.72000000          0.322          -
+BFD        127.72000000          0.449          -
+
+=== Experiment: Bimodal, n=200, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         98.62000000          0.021          -
+FF         83.82000000          0.182          -
+BF         83.60000000          0.278          -
+FFD        82.92000000          0.198          -
+BFD        82.92000000          0.432          -
+
+=== Experiment: Perfect packing, n=200, L=10, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         244.72000000          0.060          -
+FF         200.76000000          1.284          -
+BF         200.58000000          1.331          -
+FFD        200.00000000          1.741          -
+BFD        200.00000000          2.017          -
+
+=== Experiment: Uniform big n, n=50, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         34.28000000          0.005          -
+FF         28.80000000          0.021          -
+BF         28.58000000          0.028          -
+FFD        27.44000000          0.025          -
+BFD        27.44000000          0.036          -
+
+=== Experiment: Many small items, n=50, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         21.16000000          0.005          -
+FF         17.66000000          0.016          -
+BF         17.42000000          0.021          -
+FFD        16.90000000          0.020          -
+BFD        16.90000000          0.026          -
+
+=== Experiment: Many large items, n=50, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         39.64000000          0.004          -
+FF         35.72000000          0.022          -
+BF         35.56000000          0.029          -
+FFD        34.90000000          0.026          -
+BFD        34.90000000          0.037          -
+
+=== Experiment: Bimodal, n=50, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         26.34000000          0.005          -
+FF         25.18000000          0.017          -
+BF         25.08000000          0.027          -
+FFD        25.00000000          0.019          -
+BFD        25.00000000          0.039          -
+
+=== Experiment: Perfect packing, n=50, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         63.36000000          0.026          -
+FF         51.06000000          0.173          -
+BF         50.96000000          0.213          -
+FFD        50.00000000          0.278          -
+BFD        50.00000000          0.309          -
+
+=== Experiment: Uniform big n, n=100, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         67.36000000          0.010          -
+FF         56.00000000          0.069          -
+BF         55.20000000          0.092          -
+FFD        53.24000000          0.084          -
+BFD        53.24000000          0.123          -
+
+=== Experiment: Many small items, n=100, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         41.24000000          0.010          -
+FF         33.56000000          0.050          -
+BF         33.38000000          0.064          -
+FFD        32.60000000          0.065          -
+BFD        32.60000000          0.081          -
+
+=== Experiment: Many large items, n=100, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         79.68000000          0.010          -
+FF         70.62000000          0.079          -
+BF         70.12000000          0.105          -
+FFD        69.36000000          0.095          -
+BFD        69.36000000          0.132          -
+
+=== Experiment: Bimodal, n=100, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         51.32000000          0.010          -
+FF         48.72000000          0.053          -
+BF         48.50000000          0.095          -
+FFD        48.36000000          0.060          -
+BFD        48.36000000          0.139          -
+
+=== Experiment: Perfect packing, n=100, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         126.70000000          0.051          -
+FF         101.08000000          0.610          -
+BF         100.98000000          0.698          -
+FFD        100.00000000          0.994          -
+BFD        100.00000000          1.102          -
+
+=== Experiment: Uniform big n, n=200, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         134.80000000          0.020          -
+FF         110.06000000          0.240          -
+BF         108.88000000          0.332          -
+FFD        105.14000000          0.273          -
+BFD        105.14000000          0.416          -
+
+=== Experiment: Many small items, n=200, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         83.38000000          0.020          -
+FF         66.86000000          0.174          -
+BF         66.58000000          0.218          -
+FFD        65.28000000          0.231          -
+BFD        65.28000000          0.284          -
+
+=== Experiment: Many large items, n=200, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         158.72000000          0.019          -
+FF         139.50000000          0.271          -
+BF         138.66000000          0.379          -
+FFD        137.36000000          0.324          -
+BFD        137.36000000          0.477          -
+
+=== Experiment: Bimodal, n=200, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         104.54000000          0.021          -
+FF         99.44000000          0.187          -
+BF         99.24000000          0.356          -
+FFD        99.10000000          0.205          -
+BFD        99.10000000          0.526          -
+
+=== Experiment: Perfect packing, n=200, L=100, trials=50 ===
+Algo         avg_bins   avg_time(ms)  avg_ratio
+NF         252.90000000          0.103          -
+FF         201.06000000          2.267          -
+BF         200.96000000          2.430          -
+FFD        200.00000000          3.667          -
+BFD        200.00000000          4.023          -

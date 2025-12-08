@@ -17,7 +17,10 @@ SOLVER_RESULTS_CSV = "visualization/solver_results.csv"
 
 
 def _append_algo_row(dist, n, L, trials, algo, avg_bins, avg_time_ms, avg_ratio):
-    file_exists = os.path.exists(ALGO_RESULTS_CSV)
+    # if file does not exist or file is empty, write header
+    file_exists = (
+        os.path.exists(ALGO_RESULTS_CSV) and os.path.getsize(ALGO_RESULTS_CSV) > 0
+    )
     with open(ALGO_RESULTS_CSV, "a", newline="") as f:
         writer = csv.writer(f)
         if not file_exists:
@@ -48,7 +51,9 @@ def _append_algo_row(dist, n, L, trials, algo, avg_bins, avg_time_ms, avg_ratio)
 
 
 def _append_solver_row(dist, n, L, trials, solver, avg_bins, avg_time_ms):
-    file_exists = os.path.exists(SOLVER_RESULTS_CSV)
+    file_exists = (
+        os.path.exists(SOLVER_RESULTS_CSV) and os.path.getsize(SOLVER_RESULTS_CSV) > 0
+    )
     with open(SOLVER_RESULTS_CSV, "a", newline="") as f:
         writer = csv.writer(f)
         if not file_exists:

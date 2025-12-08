@@ -846,7 +846,7 @@ Exact solvers:
 Solver                 avg_bins   avg_time(ms)
 my_own_exact_solver  4.34000000          0.021
 MIP                  4.34000000        118.469
-
+ 
 Estimated OPT (min over exact solvers) avg_bins = 4.34000000
 my_own_exact_solver vs MIP: all trials matched in #bins
 

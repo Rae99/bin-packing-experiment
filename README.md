@@ -10,12 +10,18 @@ This project implements and compares various algorithms for the 1D Bin Packing P
 
 ### Implemented Algorithms
 
+**Heuristic Algorithms:**
+
 - **Next Fit (NF)**: Simple strategy that only considers the current bin
 - **First Fit (FF)**: Searches from the first bin to find one that can fit the item
 - **Best Fit (BF)**: Selects the bin with minimum remaining space that can fit the item
 - **First Fit Decreasing (FFD)**: Sorts items in decreasing order, then applies First Fit
 - **Best Fit Decreasing (BFD)**: Sorts items in decreasing order, then applies Best Fit
-- **Exact Solver**: Uses OR-Tools MIP solver to find optimal solutions
+
+**Exact Solvers:**
+
+- **Custom Backtracking Solver**: Exact solution using backtracking with pruning
+- **MIP Solver**: Mixed Integer Programming solver from Google OR-Tools (SCIP backend)
 
 ### Data Generators
 

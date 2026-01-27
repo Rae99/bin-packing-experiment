@@ -1,3 +1,39 @@
-.DS_Store
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Experiment output results (can be regenerated)
+experiment_direct_output/
+visualization/algo_results.csv
+visualization/solver_results.csv
+visualization/figs/
+
+# Test files
+*.tmp
+*.log
+temp/
+tmp/
